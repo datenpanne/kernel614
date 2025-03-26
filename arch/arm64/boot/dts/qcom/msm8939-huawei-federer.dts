@@ -25,17 +25,17 @@
 	};
 
 	chosen {
-		stdout-path = "serial0:115200n8";
+		stdout-path = "serial0";
 	};
 
 	reserved-memory {
-		cont_splash_mem: framebuffer@83000000 {
+		/*cont_splash_mem: framebuffer@83000000 {
 			compatible = "removed-dma-pool";
 			reg = <0x0 0x83000000 0x0 0x1A00000>;
 			no-map;
 		};
 
-	/*	reserved@85000000 {
+		reserved@85000000 {
 			reg = <0x0 0x85000000 0x0 0x1000000>;
 			no-map;
 		};*/
@@ -45,7 +45,7 @@
 			no-map;
 		};
 
-		tz-hwlog@8c700000 {
+		/*tz-hwlog@8c700000 {
 			reg = <0x0 0x8c700000 0x0 0x400000>;
 			no-map;
 		};
@@ -57,7 +57,7 @@
 			record-size = <0x10000>;
 			console-size = <0x100000>;
 			ftrace-size = <0>;
-		};
+		};*/
 	};
 
 	battery: battery {
@@ -275,7 +275,7 @@
 		reg = <0x38>;
 
 		interrupt-parent = <&tlmm >;
-		interrupts = <113 IRQ_TYPE_LEVEL_LOW>;
+		interrupts = <113 IRQ_TYPE_EDGE_FALLING>;
 		vdd-supply = <&pm8916_l17>;
 		//vio-supply = <&pm8916_l6>;
 
